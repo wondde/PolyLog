@@ -50,12 +50,13 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyC0MEWjej73LTBuAmeUzCtOHj9EP8WQu_A',
-    appId: '1:470445554425:ios:ffc1ca750d2dd6b4d3c028',
+    appId: '1:470445554425:ios:9f1698482fd83512d3c028',
     messagingSenderId: '470445554425',
     projectId: 'exam-4516e',
     storageBucket: 'exam-4516e.firebasestorage.app',
     androidClientId: '470445554425-o902ft83cbh3s8hnga9l7p854pjvm1st.apps.googleusercontent.com',
-    iosClientId: '470445554425-f960jen5h7ndu44999aub25olhi5rt25.apps.googleusercontent.com',
-    iosBundleId: 'com.example.blueberryTemplate',
+    iosClientId: '470445554425-702la0cov3tegkidevjloijgmfsh2a6n.apps.googleusercontent.com',
+    iosBundleId: 'com.seungwon.polylog',
   );
+
 }

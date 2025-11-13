@@ -1,0 +1,74 @@
+{
+  "app_title": "PolyLog",
+  "new_todo": "New Todo",
+  "add": "Add",
+  "cancel": "Cancel",
+  "hint_enter_todo": "Enter a todo",
+  "welcome": {
+    "title": "Welcome to PolyLog",
+    "description": "Your multilingual journal, powered by AI. Let's get started!",
+    "continue_with_google": "Continue with Google"
+  },
+  "language_levels": {
+    "title": "Language Levels",
+    "description": "Tell us about your language proficiency to tailor your learning experience.",
+    "native_language": "Native Language",
+    "learning_language": "Learning Language",
+    "next": "Next"
+  },
+  "mini_test": {
+    "title": "Mini-Test",
+    "description": "Answer a few questions to assess your understanding.",
+    "next": "Next"
+  },
+  "personalize": {
+    "title": "Personalize Your Experience",
+    "description": "Customize your settings for a tailored learning journey.",
+    "get_started": "Get Started"
+  },
+  "journal": {
+    "new_entry": "New Entry",
+    "write_thoughts": "Write your thoughts here...",
+    "private": "Private",
+    "ai_suggestions": "AI Suggestions",
+    "sentence_starters": "Sentence Starters",
+    "self_reflection": "Self-Reflection Questions",
+    "reflection_why": "Why did you feel that way?",
+    "reflection_learn": "What did you learn today?",
+    "image_suggestion": "Image Suggestion",
+    "photo_of_day": "Photo of the day",
+    "get_inspired": "Get inspired by a daily image"
+  },
+  "home": {
+    "title": "Home",
+    "todays_sentence": "Today's Sentence",
+    "example_sentence": "The sun is shining brightly, and the birds are singing their cheerful melodies.",
+    "streak": "Streak: 5 days",
+    "topic_suggestion": "Today's Topic Suggestion",
+    "topic_school": "School Life",
+    "topic_weather": "Weather",
+    "topic_emotions": "Emotions",
+    "topic_food": "Food",
+    "topic_hobbies": "Hobbies",
+    "new_diary_entry": "New Diary Entry"
+  },
+  "diary": {
+    "entry_title": "Diary Entry",
+    "corrections": "Corrections",
+    "natural": "Natural",
+    "vocab": "Vocab",
+    "sample_text": "I went to the park yesterday. It was a beautiful day, and I enjoyed watching the birds. I also met a new friend, and we had a great conversation."
+  },
+  "progress": {
+    "title": "My Progress",
+    "day_streak": "Day Streak",
+    "grammar_points": "Top 3 Grammar Points",
+    "grammar_verb": "Verb Tense\nConsistency",
+    "grammar_subject": "Subject-Verb\nAgreement",
+    "grammar_article": "Article\nUsage",
+    "expressions": "Top 5 Expressions",
+    "weekly_volume": "Weekly Writing Volume",
+    "words_written": "Words Written",
+    "last_7_days": "Last 7 Days"
+  }
+}

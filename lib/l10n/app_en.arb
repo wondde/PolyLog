@@ -1,0 +1,408 @@
+{
+  "@@locale": "en",
+  "appTitle": "PolyLog",
+  "signInWithGoogle": "Sign in with Google",
+  "writeDiary": "Write a diary",
+  "suggestions": "Suggestions",
+  "corrections": "Corrections",
+  "natural": "Natural",
+  "vocab": "Vocab",
+  "home": "Home",
+  "feed": "Feed",
+  "dashboard": "Dashboard",
+  "profile": "Profile",
+  "settings": "Settings",
+  "signOut": "Sign out",
+  "streak": "Day Streak",
+  "topicIdeas": "Topic Ideas",
+  "sentenceStarters": "Sentence Starters",
+  "reflectiveQuestions": "Reflective Questions",
+  "saveEntry": "Save Entry",
+  "cancel": "Cancel",
+  "delete": "Delete",
+  "edit": "Edit",
+  "share": "Share",
+  "mood": "Mood",
+  "happy": "Happy",
+  "sad": "Sad",
+  "angry": "Angry",
+  "calm": "Calm",
+  "visibility": "Visibility",
+  "private": "Private",
+  "anonymous": "Anonymous",
+  "casual": "Casual",
+  "formal": "Formal",
+  "grammarNotes": "Grammar Notes",
+  "score": "Score",
+  "fluency": "Fluency",
+  "accuracy": "Accuracy",
+  "loading": "Loading...",
+  "error": "Error",
+  "retry": "Retry",
+  "appearance": "Appearance",
+  "darkMode": "Dark Mode",
+  "language": "Language",
+  "uiLanguage": "UI Language",
+  "learningLanguages": "Learning Languages",
+  "aiExplanationLanguage": "AI Explanation Language",
+  "account": "Account",
+  "logOut": "Log Out",
+  "selectUILanguage": "Select UI Language",
+  "selectLearningLanguages": "Select Learning Languages",
+  "selectAILanguage": "Select AI Language",
+  "notSetAllAvailable": "Not set (all available)",
+  "save": "Save",
+  "welcome": "Welcome, {name}!",
+  "@welcome": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "dayStreak": "{count} day streak",
+  "@dayStreak": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "writeTodayDiary": "Write Today's Diary",
+  "todaySentence": "Today's Sentence",
+  "topicSuggestions": "Topic Suggestions",
+  "sentenceSuggestions": "Sentence Starters",
+  "reflectiveSuggestions": "Reflective Questions",
+  "loadingUserData": "Loading user data...",
+  "writeDiaryEntry": "Write Diary",
+  "language": "Language",
+  "pleaseSomething": "Please write something",
+  "textTooLong": "Text is too long (max 600 characters)",
+  "entrySaved": "Entry saved! AI analysis in progress...",
+  "notLoggedIn": "Not logged in",
+  "writeHere": "Write your diary entry here...",
+  "editor": "Editor",
+  "records": "Records",
+  "weeklyStudy": "Weekly Study",
+  "commonGrammarMistakes": "Common Grammar Mistakes",
+  "newVocabulary": "New Vocabulary",
+  "graphWillBeDisplayedHere": "Graph will be displayed here.",
+  "grammarPointsWillBeDisplayedHere": "Grammar points list will be displayed here.",
+  "vocabularyListWillBeDisplayedHere": "Vocabulary list will be displayed here.",
+  "dayStreakLabel": "Day Streak",
+  "weeklyGoal": "Weekly Goal",
+  "setWeeklyGoal": "Set Weekly Goal",
+  "entriesPerWeek": "{count} entries/week",
+  "@entriesPerWeek": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "goal": "Goal",
+  "activityStreak": "Activity Streak",
+  "howItWorks": "How it works",
+  "streakDescription": "Each green square represents a day you wrote in your diary. The darker the square, the more you wrote on that day.",
+  "entriesCount": "{count} entries",
+  "@entriesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "characterCount": "{count}/600 characters",
+  "@characterCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "writingPrompts": "Writing Prompts",
+  "topicKeywords": "Topic Keywords",
+  "suggestionFrom": "Suggestion: {topic}",
+  "@suggestionFrom": {
+    "placeholders": {
+      "topic": {
+        "type": "String"
+      }
+    }
+  },
+  "tapToUse": "Tap to use",
+  "today": "Today",
+  "yesterday": "Yesterday",
+  "noEntriesYet": "No entries yet.",
+  "writeYourFirstDiary": "Write your first diary!",
+  "aiAnalysisComplete": "AI Analysis Complete",
+  "aiAnalyzing": "AI Analyzing...",
+  "onboardingSetupTitle": "Learning setup",
+  "onboardingNativeLanguageTitle": "Select your native language",
+  "onboardingLearningLanguageTitle": "Choose the languages you want to learn",
+  "onboardingSelectAtLeastOne": "Please select at least one learning language",
+  "onboardingSelectLevelFor": "Please select a level for {language}",
+  "@onboardingSelectLevelFor": {
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "onboardingUserNotFound": "Unable to find user information.",
+  "onboardingSaveFailed": "Failed to save settings: {error}",
+  "@onboardingSaveFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "onboardingLevelQuestion": "How long have you been learning?",
+  "onboardingPresetBeginnerLabel": "Beginner",
+  "onboardingPresetBeginnerSubtitle": "Basic phrases",
+  "onboardingPresetIntermediateLabel": "Intermediate",
+  "onboardingPresetIntermediateSubtitle": "Comfortable in daily conversations",
+  "onboardingPresetAdvancedLabel": "Advanced",
+  "onboardingPresetAdvancedSubtitle": "Handle complex topics",
+  "onboardingShowDetailedLevels": "See detailed CEFR levels",
+  "onboardingHideDetailedLevels": "Back to simple options",
+  "onboardingDetailedLevelHeader": "Detailed CEFR level",
+  "onboardingPresetSelected": "Set to {label} level.",
+  "@onboardingPresetSelected": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "onboardingCurrentSelection": "Current selection: {level}",
+  "@onboardingCurrentSelection": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "onboardingStartButton": "Get started",
+  "onboardingChangeLaterNote": "You can change these anytime in settings.",
+  "onboardingLanguageKoLabel": "Korean (한국어)",
+  "onboardingLanguageJaLabel": "Japanese (日本語)",
+  "onboardingLanguageEnLabel": "English",
+  "onboardingLanguageDeLabel": "German (Deutsch)",
+  "onboardingLanguageEsLabel": "Spanish (Español)",
+  "onboardingLanguageArLabel": "Arabic (العربية)",
+  "onboardingLanguageZhLabel": "Chinese (中文)",
+  "onboardingLanguageFrLabel": "French (Français)",
+  "onboardingLanguageRuLabel": "Russian (Русский)",
+  "onboardingLanguagePtLabel": "Portuguese (Português)",
+  "onboardingLanguageItLabel": "Italian (Italiano)",
+  "onboardingLanguageViLabel": "Vietnamese (Tiếng Việt)",
+  "onboardingLanguageThLabel": "Thai (ไทย)",
+  "onboardingLevelA1": "A1 · Beginner",
+  "onboardingLevelA2": "A2 · Elementary",
+  "onboardingLevelB1": "B1 · Intermediate",
+  "onboardingLevelB2": "B2 · Upper Intermediate",
+  "onboardingLevelC1": "C1 · Advanced",
+  "onboardingLevelC2": "C2 · Proficient",
+  "onboardingSubtitle": "Learn languages through journaling",
+  "onboardingFeature1Title": "Write in Any Language",
+  "onboardingFeature1Desc": "Express yourself freely in Japanese, Korean, or English",
+  "onboardingFeature2Title": "AI-Powered Feedback",
+  "onboardingFeature2Desc": "Get instant corrections and learn from your mistakes",
+  "onboardingFeature3Title": "Build Daily Habits",
+  "onboardingFeature3Desc": "Track streaks and stay motivated with your goals",
+  "loginRequired": "Login required",
+  "errorOccurred": "An error occurred",
+  "errorWithMessage": "Error: {message}",
+  "@errorWithMessage": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "modelDownloadComplete": "Model download complete",
+  "downloadFailed": "Download failed: {error}",
+  "@downloadFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteModel": "Delete Model",
+  "deleteModelConfirm": "Do you want to delete the downloaded model?\n(Free up 1.1GB)",
+  "modelDeleted": "Model deleted",
+  "aiModel": "AI Model",
+  "vocabulary": "Vocabulary",
+  "debugInfo": "Debug Info",
+  "initializationStatus": "Initialization Status",
+  "cacheSize": "Cache Size",
+  "cacheHitRate": "Cache Hit Rate",
+  "systemInfo": "System Info",
+  "clearCache": "Clear Cache",
+  "cacheCleared": "Cache cleared",
+  "addAllWords": "Add All Words ({count})",
+  "@addAllWords": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "refresh": "Refresh",
+  "loadingData": "Loading data...",
+  "wordAdded": "{word} has been added to vocabulary",
+  "@wordAdded": {
+    "placeholders": {
+      "word": {
+        "type": "String"
+      }
+    }
+  },
+  "noGrammarData": "No grammar data yet.\nWrite diary entries and get AI analysis!",
+  "repeatCount": "{count} times",
+  "@repeatCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "grammarErrorEntries": "Grammar Error Entries",
+  "entriesWithGrammar": "Entries with this grammar",
+  "noEntriesWithGrammar": "No entries with this grammar",
+  "generatingNewSuggestion": "Generating new suggestion...",
+  "viewAllWords": "View All Words",
+  "viewDebugInfo": "🐛 View Debug Info",
+  "status": "Status",
+  "onDeviceAI": "On-Device AI",
+  "modelDownloaded": "Downloaded ({size} MB)",
+  "@modelDownloaded": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "modelNotDownloaded": "Download required (~1.1 GB)",
+  "modelDownloadDescription": "Download the model to use word suggestions offline.",
+  "reviewStart": "Start Review",
+  "reviewComplete": "Review Complete",
+  "allReviewsComplete": "All reviews complete!",
+  "goBack": "Go Back",
+  "reviewProgress": "Review ({current}/{total})",
+  "@reviewProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "tapToShowAnswer": "Tap to show answer",
+  "howWellRemember": "How well did you remember this word?",
+  "ratingAgain": "Again",
+  "ratingHard": "Hard",
+  "ratingGood": "Good",
+  "ratingEasy": "Easy",
+  "korean": "Korean",
+  "learningProgress": "Learning Progress",
+  "dueForReview": "Due for Review",
+  "todayCompleted": "Today Completed",
+  "newCards": "New Cards",
+  "learning": "Learning",
+  "totalWords": "Total Words",
+  "close": "Close",
+  "addWord": "Add Word",
+  "word": "Word",
+  "meaning": "Meaning",
+  "enterWordAndMeaning": "Please enter word and meaning",
+  "add": "Add",
+  "all": "All",
+  "reviewing": "Reviewing",
+  "noCardsInCategory": "No {category} cards",
+  "@noCardsInCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "newCard": "New Card",
+  "problemCard": "Problem Card",
+  "next": "Next",
+  "now": "Now",
+  "daysLater": "{days} days later",
+  "@daysLater": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "hoursLater": "{hours} hours later",
+  "@hoursLater": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "minutesLater": "{minutes} minutes later",
+  "@minutesLater": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "soon": "Soon",
+  "viewAllWords": "View All Words",
+  "viewDebugInfo": "🐛 View Debug Info",
+  "status": "Status",
+  "aiReview": "AI Review",
+  "aiAnalysisTakingLong": "AI analysis is taking longer than expected",
+  "checkFirebaseLogs": "Please check Firebase Functions logs\nor try again later",
+  "aiAnalysisInProgress": "AI analysis in progress... ({seconds}s)",
+  "@aiAnalysisInProgress": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "retry": "Retry",
+  "noVocabularyFound": "No vocabulary items found",
+  "wordsAddedAndSkipped": "{added} added, {skipped} already exist",
+  "@wordsAddedAndSkipped": {
+    "placeholders": {
+      "added": {
+        "type": "int"
+      },
+      "skipped": {
+        "type": "int"
+      }
+    }
+  },
+  "wordsAddedCount": "{count} words have been added",
+  "@wordsAddedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "allWordsAlreadyExist": "All words already exist in vocabulary",
+  "addToVocabulary": "Add to vocabulary",
+  "wordAlreadyExists": "Word already exists in vocabulary",
+  "generatingSuggestions": "Generating new suggestions...",
+  "originalVsCorrected": "Original vs Corrected",
+  "scores": "Scores",
+  "casualExpression": "Casual Expression",
+  "formalExpression": "Formal Expression",
+  "searchUnknownWords": "Search unknown words..."
+}

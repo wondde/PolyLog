@@ -1,0 +1,226 @@
+# 프로젝트 구조 설명 (상세)
+
+이 문서는 현재 프로젝트의 디렉토리 구조와 각 파일 및 디렉토리의 역할에 대해 매우 상세하게 설명합니다. 이 프로젝트는 Flutter 프레임워크를 사용하여 크로스 플랫폼 애플리케이션을 개발하며, Firebase를 백엔드 서비스로 활용하고 있습니다.
+
+## 최상위 디렉토리 및 파일
+
+프로젝트의 루트 디렉토리에 위치한 주요 파일과 디렉토리는 다음과 같습니다.
+
+-   **`.firebaserc`**:
+    -   **역할**: Firebase CLI가 현재 디렉토리를 Firebase 프로젝트의 일부로 인식하도록 하는 설정 파일입니다. 어떤 Firebase 프로젝트 ID를 사용할지 지정합니다.
+    -   **내용 예시**: `{"projects": {"default": "your-firebase-project-id"}}`
+-   **`.fvmrc`**:
+    -   **역할**: [FVM (Flutter Version Management)](https://fvm.app/) 설정 파일입니다. 이 프로젝트에서 사용할 Flutter SDK의 특정 버전을 지정합니다. 팀원 간 Flutter 버전 일치를 강제하여 개발 환경의 일관성을 유지하는 데 도움을 줍니다.
+    -   **내용 예시**: `{"flutterSdkVersion": "3.16.0"}`
+-   **`.gitignore`**:
+    -   **역할**: Git 버전 관리에서 추적하지 않을 파일이나 디렉토리를 지정합니다. 빌드 결과물, IDE 설정 파일, 민감한 정보 등을 포함하여 저장소에 불필요한 파일이 커밋되는 것을 방지합니다.
+-   **`.gitmessage`**:
+    -   **역할**: Git 커밋 메시지 템플릿 파일입니다. 커밋 메시지의 일관된 형식을 유지하는 데 사용될 수 있습니다.
+-   **`.metadata`**:
+    -   **역할**: Flutter 프로젝트의 내부 메타데이터 파일입니다. 주로 Flutter 툴링에서 프로젝트 유형을 식별하는 데 사용됩니다.
+-   **`.prettierignore`**:
+    -   **역할**: 코드 포맷터인 Prettier가 포맷팅을 무시할 파일이나 디렉토리를 지정합니다.
+-   **`analysis_options.yaml`**:
+    -   **역할**: Dart 코드 분석기(analyzer)의 규칙을 설정하는 파일입니다. 코드 스타일, 린트(lint) 규칙, 경고/에러 수준 등을 정의하여 코드 품질과 일관성을 유지합니다. `pedantic` 또는 `flutter_lints`와 같은 패키지의 규칙을 확장하여 사용하기도 합니다.
+-   **`CLAUDE.md`**:
+    -   **역할**: Claude AI와 관련된 문서 또는 지침이 포함될 수 있습니다. (예: Claude를 활용한 개발 가이드, 특정 프롬프트 예시 등)
+-   **`firebase.json`**:
+    -   **역할**: Firebase 프로젝트의 전반적인 설정을 정의합니다. 호스팅(Hosting), 함수(Functions), Firestore, 스토리지(Storage) 등 다양한 Firebase 서비스의 배포 및 동작 방식을 구성합니다.
+    -   **주요 섹션**: `hosting`, `functions`, `firestore`, `storage` 등.
+-   **`firestore.indexes.json`**:
+    -   **역할**: Firestore 데이터베이스의 쿼리 성능 최적화를 위한 인덱스 정의 파일입니다. 복합 쿼리(compound queries)를 사용할 때 필요한 인덱스를 미리 선언합니다.
+-   **`firestore.rules`**:
+    -   **역할**: Firestore 데이터베이스의 보안 규칙을 정의합니다. 데이터에 대한 읽기/쓰기 접근 권한을 제어하여 데이터 보안을 강화합니다.
+-   **`GEMINI_API_SETUP.md`**:
+    -   **역할**: Gemini API 설정과 관련된 문서 또는 지침이 포함될 수 있습니다. (예: API 키 설정, 사용 방법 등)
+-   **`l10n.yaml`**:
+    -   **역할**: Flutter의 국제화(Localization) 설정을 위한 파일입니다. 지원하는 언어 목록, 번역 파일의 위치, 생성될 Dart 코드의 출력 경로 등을 지정합니다. `flutter_localizations` 패키지와 함께 사용됩니다.
+-   **`LICENSE.txt`**:
+    -   **역할**: 프로젝트의 라이선스 정보를 담고 있는 파일입니다. 프로젝트의 사용, 배포, 수정 조건을 명시합니다.
+-   **`PROJECT_SUMMARY.md`**:
+    -   **역할**: 프로젝트의 전반적인 개요, 목표, 주요 기능 등을 요약한 문서입니다.
+-   **`pubspec.yaml`**:
+    -   **역할**: Flutter/Dart 프로젝트의 핵심 매니페스트 파일입니다.
+        -   **`name`**: 프로젝트 이름
+        -   **`description`**: 프로젝트 설명
+        -   **`version`**: 애플리케이션 버전 및 빌드 번호
+        -   **`environment`**: Dart 및 Flutter SDK 버전 제약 조건
+        -   **`dependencies`**: 프로젝트가 의존하는 Dart/Flutter 패키지 목록 (예: `flutter`, `cupertino_icons`, `firebase_core`, `provider` 등)
+        -   **`dev_dependencies`**: 개발 환경에서만 필요한 패키지 목록 (예: `flutter_test`, `lints`, `build_runner` 등)
+        -   **`flutter` 섹션**: Flutter 관련 설정 (예: `uses-material-design`, `assets` 경로, `fonts` 경로 등)
+-   **`README.md`**:
+    -   **역할**: 프로젝트의 가장 기본적인 설명서입니다. 프로젝트 소개, 설치 방법, 실행 방법, 기여 방법 등 핵심 정보를 담고 있습니다.
+-   **`SETUP_GUIDE.md`**:
+    -   **역할**: 개발 환경 설정 및 프로젝트 시작을 위한 상세 가이드 문서입니다.
+-   **`TROUBLESHOOTING.md`**:
+    -   **역할**: 프로젝트 개발 또는 실행 중 발생할 수 있는 일반적인 문제와 해결 방법을 정리한 문서입니다.
+
+## 숨겨진 디렉토리 (Hidden Directories)
+
+-   **`.claude/`**:
+    -   **역할**: Claude AI와 관련된 설정 파일이나 캐시 등이 저장될 수 있는 디렉토리입니다.
+    -   **`settings.json`**: Claude AI의 특정 설정이 저장될 수 있습니다.
+-   **`.dart_tool/`**:
+    -   **역할**: Dart 및 Flutter 툴링에 의해 생성되는 임시 파일, 캐시, 빌드 아티팩트 등이 저장되는 디렉토리입니다. Git에 의해 추적되지 않습니다.
+    -   **`dartpad/`**: DartPad 관련 파일.
+    -   **`extension_discovery/`**: 확장 기능 검색 관련 파일.
+    -   **`flutter_build/`**: Flutter 빌드 관련 임시 파일.
+    -   **`flutterfire/`**: FlutterFire (Firebase for Flutter) 관련 파일.
+    -   **`pub/`**: Dart 패키지 매니저(pub) 관련 캐시 및 임시 파일.
+-   **`.firebase/`**:
+    -   **역할**: Firebase CLI에 의해 생성되는 로컬 캐시 파일입니다.
+    -   **`hosting.*.cache`**: Firebase Hosting 관련 캐시 파일.
+-   **`.fvm/`**:
+    -   **역할**: FVM (Flutter Version Management)에 의해 관리되는 Flutter SDK 버전들이 설치되는 디렉토리입니다.
+    -   **`versions/`**: 설치된 Flutter SDK 버전들이 하위 디렉토리로 존재합니다.
+-   **`.git/`**:
+    -   **역할**: Git 버전 관리 시스템의 모든 정보(커밋 히스토리, 브랜치, 설정 등)가 저장되는 디렉토리입니다. 이 디렉토리를 통해 프로젝트의 모든 변경 사항이 추적됩니다.
+-   **`.github/`**:
+    -   **역할**: GitHub 플랫폼과 관련된 설정 파일이 위치합니다. 주로 GitHub Actions 워크플로우를 정의하는 데 사용됩니다.
+    -   **`workflows/`**:
+        -   **`build-test.yml`**: 코드 빌드 및 테스트를 자동화하는 GitHub Actions 워크플로우 정의 파일입니다.
+        -   **`format-test.yml`**: 코드 포맷팅 규칙 준수 여부를 검사하는 워크플로우입니다.
+        -   **`lint-test.yml`**: 린트 규칙 준수 여부를 검사하는 워크플로우입니다.
+        -   **`unit-test.yml`**: 단위 테스트를 실행하는 워크플로우입니다.
+-   **`.idea/`**:
+    -   **역할**: IntelliJ IDEA 또는 Android Studio와 같은 JetBrains IDE의 프로젝트 설정 파일이 저장되는 디렉토리입니다. (예: 코드 스타일, 런타임 설정, 플러그인 설정)
+    -   **`libraries/`**: IDE가 사용하는 라이브러리 설정.
+    -   **`runConfigurations/`**: 실행/디버그 구성 설정.
+-   **`.vscode/`**:
+    -   **역할**: Visual Studio Code IDE의 프로젝트별 설정 파일이 저장되는 디렉토리입니다.
+    -   **`extensions.json`**: 프로젝트에 권장되는 VS Code 확장 프로그램 목록.
+    -   **`launch.json`**: 디버거 실행 설정.
+    -   **`settings.json`**: VS Code의 프로젝트별 설정 (예: 포맷터, 린터 설정).
+    -   **`tasks.json`**: VS Code에서 실행할 수 있는 사용자 정의 작업(task) 정의.
+
+## 플랫폼별 디렉토리
+
+Flutter는 단일 코드베이스로 여러 플랫폼을 지원하므로, 각 플랫폼에 특화된 설정 및 네이티브 코드를 위한 디렉토리가 존재합니다.
+
+-   **`android/`**:
+    -   **역할**: Android 애플리케이션 빌드 및 설정에 필요한 파일들이 포함됩니다.
+    -   **`.gitignore`**: Android 관련 Git 무시 파일.
+    -   **`build.gradle.kts` (프로젝트 레벨)**: Android 프로젝트 전체의 빌드 설정.
+    -   **`gradle.properties`**: Gradle 빌드 시스템의 속성 파일.
+    -   **`settings.gradle.kts`**: Gradle이 어떤 모듈을 빌드할지 정의.
+    -   **`.gradle/`**: Gradle 캐시 및 임시 파일.
+    -   **`.kotlin/`**: Kotlin 관련 설정 또는 캐시.
+    -   **`app/`**: Android 앱 모듈의 소스 코드 및 리소스.
+        -   **`build.gradle.kts` (앱 레벨)**: Android 앱 모듈의 빌드 설정 (의존성, 빌드 타입 등).
+        -   **`src/`**: Android 앱의 Java/Kotlin 소스 코드, 리소스(res), Manifest 파일 등.
+    -   **`gradle/`**: Gradle Wrapper 관련 파일.
+-   **`ios/`**:
+    -   **역할**: iOS 애플리케이션 빌드 및 설정에 필요한 파일들이 포함됩니다.
+    -   **`.gitignore`**: iOS 관련 Git 무시 파일.
+    -   **`Podfile`**: CocoaPods 의존성 관리자 설정 파일. iOS 네이티브 라이브러리 의존성을 정의합니다.
+    -   **`Podfile.lock`**: `Podfile`에 정의된 의존성들의 정확한 버전을 기록합니다.
+    -   **`.symlinks/`**: 플러그인 심볼릭 링크.
+    -   **`build/`**: iOS 빌드 결과물.
+    -   **`Flutter/`**: Flutter 엔진 및 플러그인 관련 파일.
+        -   **`AppFrameworkInfo.plist`**: 앱 프레임워크 정보.
+        -   **`Debug.xcconfig`**, **`Release.xcconfig`**: 디버그/릴리즈 빌드 구성 설정.
+        -   **`ephemeral/`**: 임시 파일.
+    -   **`Pods/`**: CocoaPods에 의해 설치된 라이브러리들.
+    -   **`Runner/`**: iOS 앱의 주 타겟(target) 디렉토리.
+        -   **`AppDelegate.swift`**: iOS 앱의 진입점 및 주요 이벤트 핸들러.
+        -   **`Info.plist`**: iOS 앱의 메타데이터 (권한, 아이콘, 앱 이름 등).
+        -   **`Runner-Bridging-Header.h`**: Swift와 Objective-C 코드를 함께 사용할 때 필요한 브리징 헤더.
+        -   **`Assets.xcassets/`**: 앱 아이콘, 이미지 등 에셋 카탈로그.
+        -   **`Base.lproj/`**: 기본 로컬라이제이션 리소스.
+    -   **`Runner.xcodeproj/`**: Xcode 프로젝트 파일.
+    -   **`Runner.xcworkspace/`**: Xcode 워크스페이스 파일 (프로젝트와 CocoaPods 통합).
+    -   **`RunnerTests/`**: iOS 네이티브 테스트 코드.
+    -   **`scripts/`**: iOS 빌드 관련 스크립트.
+-   **`linux/`**:
+    -   **역할**: Linux 데스크톱 애플리케이션 빌드 및 설정에 필요한 파일들이 포함됩니다.
+    -   **`flutter/`**: Flutter 관련 파일.
+    -   **`runner/`**: Linux 앱의 주 타겟 디렉토리.
+-   **`macos/`**:
+    -   **역할**: macOS 데스크톱 애플리케이션 빌드 및 설정에 필요한 파일들이 포함됩니다.
+    -   **`Flutter/`**: Flutter 관련 파일.
+    -   **`Runner/`**: macOS 앱의 주 타겟 디렉토리.
+    -   **`Runner.xcodeproj/`**: Xcode 프로젝트 파일.
+    -   **`Runner.xcworkspace/`**: Xcode 워크스페이스 파일.
+    -   **`RunnerTests/`**: macOS 네이티브 테스트 코드.
+-   **`web/`**:
+    -   **역할**: 웹 애플리케이션 빌드 및 설정에 필요한 파일들이 포함됩니다.
+    -   **`icons/`**: 웹 앱 아이콘.
+    -   **`splash/`**: 웹 앱 스플래시 화면 관련 파일.
+-   **`windows/`**:
+    -   **역할**: Windows 데스크톱 애플리케이션 빌드 및 설정에 필요한 파일들이 포함됩니다.
+    -   **`flutter/`**: Flutter 관련 파일.
+    -   **`runner/`**: Windows 앱의 주 타겟 디렉토리.
+
+## 핵심 애플리케이션 디렉토리
+
+-   **`assets/`**:
+    -   **역할**: 애플리케이션에서 사용되는 정적 리소스 파일들을 저장하는 디렉토리입니다. `pubspec.yaml`에 경로를 등록하여 사용합니다.
+    -   **`blueberry.svg`**: SVG 형식의 이미지 파일.
+    -   **`loading.png`**: PNG 형식의 이미지 파일.
+    -   **`polylog.png`**: PNG 형식의 이미지 파일.
+    -   **`translations/`**: 국제화(Localization)를 위한 번역 파일들이 저장됩니다.
+        -   **`en.json`**: 영어 번역 파일.
+        -   **`ko.json`**: 한국어 번역 파일.
+-   **`build/`**:
+    -   **역할**: Flutter 빌드 시스템에 의해 생성되는 빌드 결과물(컴파일된 코드, 패키지 등)이 저장되는 디렉토리입니다. Git에 의해 추적되지 않습니다.
+    -   **`ios/`**: iOS 빌드 결과물.
+    -   **`native_assets/`**: 네이티브 에셋 관련 파일.
+-   **`docs/`**:
+    -   **역할**: 프로젝트의 다양한 문서들을 체계적으로 관리하는 디렉토리입니다.
+    -   **`architecture/`**: 프로젝트의 아키텍처 관련 문서.
+        -   **`controllers.md`**: 컨트롤러의 역할 및 구현 방식.
+        -   **`error-handling.md`**: 에러 처리 전략.
+        -   **`project-structure.md`**: 프로젝트 구조 설명 (이 문서).
+        -   **`repositories.md`**: 데이터 저장소(Repository) 패턴 설명.
+        -   **`screens.md`**: 화면(Screen) 구성 및 역할.
+    -   **`features/`**: 특정 기능에 대한 설명 문서.
+        -   **`localization.md`**: 국제화(Localization) 기능 설명.
+        -   **`theming.md`**: 테마(Theming) 기능 설명.
+    -   **`setup/`**: 개발 환경 설정 및 특정 서비스 설정 가이드.
+        -   **`CLAUDE_CODE_MCP_SETUP.md`**: Claude Code MCP 설정 가이드.
+        -   **`FIREBASE_SETUP.md`**: Firebase 설정 가이드.
+        -   **`FLUTTER_SETUP_FVM.md`**: FVM을 사용한 Flutter 설정 가이드.
+        -   **`FLUTTER_SETUP_MACOS.md`**: macOS용 Flutter 설정 가이드.
+        -   **`FLUTTER_SETUP_WINDOWS.md`**: Windows용 Flutter 설정 가이드.
+        -   **`FLUTTER_SETUP.md`**: 일반적인 Flutter 설정 가이드.
+        -   **`FLUTTER_TROUBLESHOOTING.md`**: Flutter 문제 해결 가이드.
+-   **`functions/`**:
+    -   **역할**: Firebase Functions (클라우드 함수)의 소스 코드가 위치하는 디렉토리입니다. 주로 TypeScript로 작성됩니다.
+    -   **`.gitignore`**: Functions 관련 Git 무시 파일.
+    -   **`package-lock.json`**: `package.json`에 정의된 의존성들의 정확한 버전을 기록합니다.
+    -   **`package.json`**: Node.js 프로젝트의 매니페스트 파일. Functions의 의존성, 스크립트 등을 정의합니다.
+    -   **`tsconfig.json`**: TypeScript 컴파일러 설정 파일.
+    -   **`lib/`**: TypeScript 소스 코드가 컴파일된 JavaScript 파일이 저장되는 디렉토리입니다.
+        -   **`prompts/`**: 프롬프트 관련 라이브러리 또는 모듈.
+    -   **`node_modules/`**: `package.json`에 정의된 Node.js 패키지들이 설치되는 디렉토리입니다.
+    -   **`src/`**: Firebase Functions의 TypeScript 소스 코드.
+        -   **`index.ts`**: Firebase Functions의 진입점 파일.
+        -   **`llm.ts`**: LLM(Large Language Model) 관련 로직이 포함될 수 있습니다.
+        -   **`prompts/`**: 프롬프트 관련 모듈.
+-   **`lib/`**:
+    -   **역할**: Flutter 애플리케이션의 모든 Dart 소스 코드가 위치하는 핵심 디렉토리입니다.
+    -   **`app_router.dart`**: GoRouter, Navigator 2.0 등 라우팅 패키지를 사용하여 앱의 화면 전환 로직을 정의합니다.
+    -   **`firebase_options.dart`**: FlutterFire CLI에 의해 생성되는 파일로, Firebase 프로젝트 설정(API 키, 프로젝트 ID 등)을 포함합니다.
+    -   **`main.dart`**: Flutter 애플리케이션의 메인 진입점입니다. `runApp()` 함수를 호출하여 위젯 트리를 시작합니다.
+    -   **`providers.dart`**: Riverpod, Provider, BLoC 등 상태 관리 솔루션의 프로바이더(Provider)들을 정의하는 파일입니다. 앱 전체에서 공유되는 데이터를 관리합니다.
+    -   **`web_scaffold.dart`**: 웹 플랫폼에 특화된 스캐폴드(UI 레이아웃) 위젯을 정의할 수 있습니다.
+    -   **`core/`**:
+        -   **역할**: 앱의 핵심 기능, 유틸리티, 공통 로직, 서비스 인터페이스 등을 포함합니다. 특정 기능에 종속되지 않고 앱 전반에서 사용될 수 있는 코드들이 위치합니다.
+        -   **예시**: `api_client.dart` (API 통신), `auth_service.dart` (인증 로직), `constants.dart` (상수), `utils.dart` (유틸리티 함수).
+    -   **`features/`**:
+        -   **역할**: 앱의 각 독립적인 기능(feature)별로 코드를 모아놓은 디렉토리입니다. 각 기능은 자체적인 UI, 비즈니스 로직, 데이터 모델 등을 가질 수 있습니다. 이는 모듈화된 아키텍처를 구성하는 데 도움을 줍니다.
+        -   **예시**: `authentication/`, `chat/`, `profile/`, `settings/` 등. 각 기능 디렉토리 내에는 `data/`, `domain/`, `presentation/` 등의 계층 구조를 가질 수 있습니다.
+    -   **`l10n/`**:
+        -   **역할**: 국제화(Localization)된 문자열 리소스 파일들이 위치합니다. `l10n.yaml` 설정에 따라 `app_en.arb`, `app_ko.arb`와 같은 ARB(Application Resource Bundle) 파일이 생성될 수 있으며, 이를 기반으로 Dart 코드가 자동 생성됩니다.
+    -   **`theme/`**:
+        -   **역할**: 애플리케이션의 시각적 테마를 정의하는 파일들이 위치합니다. 색상(colors), 폰트(typography), 텍스트 스타일(text_styles), 앱 테마 데이터(app_theme.dart) 등을 포함합니다.
+-   **`public/`**:
+    -   **역할**: 웹 빌드 시 사용되는 정적 파일들이 위치합니다. 주로 `index.html` 파일이 포함됩니다.
+    -   **`index.html`**: 웹 애플리케이션의 진입점 HTML 파일입니다. Flutter 웹 앱이 이 파일에 로드됩니다.
+-   **`scripts/`**:
+    -   **역할**: 개발 및 배포 프로세스를 자동화하거나 특정 작업을 수행하기 위한 쉘 스크립트 파일들이 위치합니다.
+    -   **`get_android_sha1.sh`**: Android 앱의 SHA-1 키를 얻는 스크립트 (Firebase 인증 등에서 필요).
+    -   **`setup_gemini.sh`**: Gemini 관련 설정을 자동화하는 스크립트.
+-   **`test/`**:
+    -   **역할**: Flutter 애플리케이션의 테스트 코드가 위치하는 디렉토리입니다.
+    -   **`widget_test.dart`**: Flutter 위젯에 대한 기본 위젯 테스트 예시 파일입니다. 단위 테스트, 위젯 테스트, 통합 테스트 등 다양한 유형의 테스트 코드가 추가될 수 있습니다.

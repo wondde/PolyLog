@@ -1,0 +1,408 @@
+{
+  "@@locale": "ja",
+  "appTitle": "PolyLog",
+  "signInWithGoogle": "Googleでログイン",
+  "writeDiary": "日記を書く",
+  "suggestions": "提案",
+  "corrections": "添削",
+  "natural": "自然な表現",
+  "vocab": "単語帳",
+  "home": "ホーム",
+  "feed": "フィード",
+  "dashboard": "統計",
+  "profile": "プロフィール",
+  "settings": "設定",
+  "signOut": "ログアウト",
+  "streak": "連続日数",
+  "topicIdeas": "トピックのアイデア",
+  "sentenceStarters": "文の始め方",
+  "reflectiveQuestions": "振り返りの質問",
+  "saveEntry": "保存",
+  "cancel": "キャンセル",
+  "delete": "削除",
+  "edit": "編集",
+  "share": "共有",
+  "mood": "気分",
+  "happy": "嬉しい",
+  "sad": "悲しい",
+  "angry": "怒っている",
+  "calm": "落ち着いている",
+  "visibility": "公開設定",
+  "private": "非公開",
+  "anonymous": "匿名",
+  "casual": "カジュアル",
+  "formal": "フォーマル",
+  "grammarNotes": "文法メモ",
+  "score": "スコア",
+  "fluency": "流暢さ",
+  "accuracy": "正確さ",
+  "loading": "読み込み中...",
+  "error": "エラー",
+  "retry": "再試行",
+  "appearance": "外観",
+  "darkMode": "ダークモード",
+  "language": "言語",
+  "uiLanguage": "UI言語",
+  "learningLanguages": "学習言語",
+  "aiExplanationLanguage": "AI説明言語",
+  "account": "アカウント",
+  "logOut": "ログアウト",
+  "selectUILanguage": "UI言語を選択",
+  "selectLearningLanguages": "学習言語を選択",
+  "selectAILanguage": "AI説明言語を選択",
+  "notSetAllAvailable": "未設定（すべて利用可能）",
+  "save": "保存",
+  "welcome": "ようこそ、{name}さん！",
+  "@welcome": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "dayStreak": "{count}日連続",
+  "@dayStreak": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "writeTodayDiary": "今日の日記を書く",
+  "todaySentence": "今日の文章",
+  "topicSuggestions": "トピックの提案",
+  "sentenceSuggestions": "文の始め方",
+  "reflectiveSuggestions": "振り返りの質問",
+  "loadingUserData": "ユーザーデータを読み込み中...",
+  "writeDiaryEntry": "日記を書く",
+  "language": "言語",
+  "pleaseSomething": "何か書いてください",
+  "textTooLong": "テキストが長すぎます（最大600文字）",
+  "entrySaved": "日記が保存されました！AI分析中...",
+  "notLoggedIn": "ログインしていません",
+  "writeHere": "日記を書く...",
+  "editor": "編集",
+  "records": "記録",
+  "weeklyStudy": "週間学習量",
+  "commonGrammarMistakes": "よくある文法ミス",
+  "newVocabulary": "新しい単語",
+  "graphWillBeDisplayedHere": "グラフがここに表示されます。",
+  "grammarPointsWillBeDisplayedHere": "文法ポイントのリストがここに表示されます。",
+  "vocabularyListWillBeDisplayedHere": "単語リストがここに表示されます。",
+  "dayStreakLabel": "連続日数",
+  "weeklyGoal": "週間目標",
+  "setWeeklyGoal": "週間目標を設定",
+  "entriesPerWeek": "日記{count}個/週",
+  "@entriesPerWeek": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "goal": "目標",
+  "activityStreak": "アクティビティ連続記録",
+  "howItWorks": "使い方",
+  "streakDescription": "各緑色の四角形は日記を書いた日を表します。色が濃いほど、その日により多く書いたことを示します。",
+  "entriesCount": "{count}個の日記",
+  "@entriesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "characterCount": "{count}/600文字",
+  "@characterCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "writingPrompts": "作成ヒント",
+  "topicKeywords": "トピックキーワード",
+  "suggestionFrom": "提案: {topic}",
+  "@suggestionFrom": {
+    "placeholders": {
+      "topic": {
+        "type": "String"
+      }
+    }
+  },
+  "tapToUse": "タップして使用",
+  "today": "今日",
+  "yesterday": "昨日",
+  "noEntriesYet": "まだ日記がありません。",
+  "writeYourFirstDiary": "最初の日記を書いてみましょう！",
+  "aiAnalysisComplete": "AI分析完了",
+  "aiAnalyzing": "AI分析中...",
+  "onboardingSetupTitle": "学習設定",
+  "onboardingNativeLanguageTitle": "母語を選択してください",
+  "onboardingLearningLanguageTitle": "学習したい言語を選択してください",
+  "onboardingSelectAtLeastOne": "学習する言語を1つ以上選択してください",
+  "onboardingSelectLevelFor": "{language}のレベルを選択してください",
+  "@onboardingSelectLevelFor": {
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "onboardingUserNotFound": "ユーザー情報を取得できませんでした。",
+  "onboardingSaveFailed": "設定の保存に失敗しました: {error}",
+  "@onboardingSaveFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "onboardingLevelQuestion": "どのくらい学習しましたか？",
+  "onboardingPresetBeginnerLabel": "初級",
+  "onboardingPresetBeginnerSubtitle": "基礎フレーズ中心",
+  "onboardingPresetIntermediateLabel": "中級",
+  "onboardingPresetIntermediateSubtitle": "日常会話ができる",
+  "onboardingPresetAdvancedLabel": "上級",
+  "onboardingPresetAdvancedSubtitle": "複雑な話題も対応",
+  "onboardingShowDetailedLevels": "詳細なレベルを選択する",
+  "onboardingHideDetailedLevels": "簡単な選択に戻る",
+  "onboardingDetailedLevelHeader": "CEFR 詳細レベル",
+  "onboardingPresetSelected": "{label}レベルで設定しました。",
+  "@onboardingPresetSelected": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "onboardingCurrentSelection": "現在の選択: {level}",
+  "@onboardingCurrentSelection": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "onboardingStartButton": "始める",
+  "onboardingChangeLaterNote": "設定は後からいつでも変更できます。",
+  "onboardingLanguageKoLabel": "韓国語 (한국어)",
+  "onboardingLanguageJaLabel": "日本語",
+  "onboardingLanguageEnLabel": "英語 (English)",
+  "onboardingLanguageDeLabel": "ドイツ語 (Deutsch)",
+  "onboardingLanguageEsLabel": "スペイン語 (Español)",
+  "onboardingLanguageArLabel": "アラビア語 (العربية)",
+  "onboardingLanguageZhLabel": "中国語 (中文)",
+  "onboardingLanguageFrLabel": "フランス語 (Français)",
+  "onboardingLanguageRuLabel": "ロシア語 (Русский)",
+  "onboardingLanguagePtLabel": "ポルトガル語 (Português)",
+  "onboardingLanguageItLabel": "イタリア語 (Italiano)",
+  "onboardingLanguageViLabel": "ベトナム語 (Tiếng Việt)",
+  "onboardingLanguageThLabel": "タイ語 (ไทย)",
+  "onboardingLevelA1": "A1 · 初級",
+  "onboardingLevelA2": "A2 · 基礎",
+  "onboardingLevelB1": "B1 · 中級",
+  "onboardingLevelB2": "B2 · 中上級",
+  "onboardingLevelC1": "C1 · 上級",
+  "onboardingLevelC2": "C2 · 熟達",
+  "onboardingSubtitle": "日記を通じて言語を学ぶ",
+  "onboardingFeature1Title": "どんな言語でも書ける",
+  "onboardingFeature1Desc": "日本語、韓国語、英語で自由に表現しましょう",
+  "onboardingFeature2Title": "AI搭載フィードバック",
+  "onboardingFeature2Desc": "即座に添削を受けて、ミスから学びましょう",
+  "onboardingFeature3Title": "毎日の習慣を作る",
+  "onboardingFeature3Desc": "連続記録を追跡し、目標を維持しましょう",
+  "loginRequired": "ログインが必要です",
+  "errorOccurred": "エラーが発生しました",
+  "errorWithMessage": "エラー: {message}",
+  "@errorWithMessage": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "modelDownloadComplete": "モデルのダウンロード完了",
+  "downloadFailed": "ダウンロード失敗: {error}",
+  "@downloadFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteModel": "モデルを削除",
+  "deleteModelConfirm": "ダウンロードしたモデルを削除しますか？\n(1.1GB解放)",
+  "modelDeleted": "モデル削除完了",
+  "aiModel": "AIモデル",
+  "vocabulary": "単語帳",
+  "debugInfo": "デバッグ情報",
+  "initializationStatus": "初期化状態",
+  "cacheSize": "キャッシュサイズ",
+  "cacheHitRate": "キャッシュヒット率",
+  "systemInfo": "システム情報",
+  "clearCache": "キャッシュをクリア",
+  "cacheCleared": "キャッシュをクリアしました",
+  "addAllWords": "すべての単語を追加 ({count}個)",
+  "@addAllWords": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "refresh": "更新",
+  "loadingData": "データ読み込み中...",
+  "wordAdded": "{word}を単語帳に追加しました",
+  "@wordAdded": {
+    "placeholders": {
+      "word": {
+        "type": "String"
+      }
+    }
+  },
+  "noGrammarData": "まだ文法データがありません。\n日記を書いてAI分析を受けてみましょう！",
+  "repeatCount": "{count}回繰り返し",
+  "@repeatCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "grammarErrorEntries": "文法エラー日記",
+  "entriesWithGrammar": "この文法を含む日記",
+  "noEntriesWithGrammar": "この文法を含む日記がありません",
+  "generatingNewSuggestion": "新しい提案を生成中...",
+  "viewAllWords": "すべての単語を見る",
+  "viewDebugInfo": "🐛 デバッグ情報を見る",
+  "status": "状態",
+  "onDeviceAI": "オンデバイスAI",
+  "modelDownloaded": "ダウンロード完了 ({size} MB)",
+  "@modelDownloaded": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "modelNotDownloaded": "ダウンロード必要 (~1.1 GB)",
+  "modelDownloadDescription": "モデルをダウンロードすると、オフラインでも単語提案を使用できます。",
+  "reviewStart": "復習開始",
+  "reviewComplete": "復習完了",
+  "allReviewsComplete": "すべての復習が完了しました！",
+  "goBack": "戻る",
+  "reviewProgress": "復習 ({current}/{total})",
+  "@reviewProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "tapToShowAnswer": "タップして答えを表示",
+  "howWellRemember": "この単語をどれくらい覚えていましたか？",
+  "ratingAgain": "もう一度",
+  "ratingHard": "難しい",
+  "ratingGood": "良い",
+  "ratingEasy": "簡単",
+  "korean": "韓国語",
+  "learningProgress": "学習状況",
+  "dueForReview": "復習予定",
+  "todayCompleted": "今日完了",
+  "newCards": "新しいカード",
+  "learning": "学習中",
+  "totalWords": "総単語数",
+  "close": "閉じる",
+  "addWord": "単語を追加",
+  "word": "単語",
+  "meaning": "意味",
+  "enterWordAndMeaning": "単語と意味を入力してください",
+  "add": "追加",
+  "all": "すべて",
+  "reviewing": "復習中",
+  "noCardsInCategory": "{category}カードがありません",
+  "@noCardsInCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "newCard": "新しいカード",
+  "problemCard": "問題カード",
+  "next": "次",
+  "now": "今",
+  "daysLater": "{days}日後",
+  "@daysLater": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "hoursLater": "{hours}時間後",
+  "@hoursLater": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "minutesLater": "{minutes}分後",
+  "@minutesLater": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "soon": "もうすぐ",
+  "viewAllWords": "すべての単語を見る",
+  "viewDebugInfo": "🐛 デバッグ情報を見る",
+  "status": "ステータス",
+  "aiReview": "AIレビュー",
+  "aiAnalysisTakingLong": "AI分析が予想より長くかかっています",
+  "checkFirebaseLogs": "Firebase Functionsログを確認するか\n後でもう一度お試しください",
+  "aiAnalysisInProgress": "AI分析中... ({seconds}秒)",
+  "@aiAnalysisInProgress": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "retry": "再試行",
+  "noVocabularyFound": "抽出された単語がありません",
+  "wordsAddedAndSkipped": "{added}個追加、{skipped}個すでに存在",
+  "@wordsAddedAndSkipped": {
+    "placeholders": {
+      "added": {
+        "type": "int"
+      },
+      "skipped": {
+        "type": "int"
+      }
+    }
+  },
+  "wordsAddedCount": "{count}個の単語が追加されました",
+  "@wordsAddedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "allWordsAlreadyExist": "すべての単語がすでに単語帳にあります",
+  "addToVocabulary": "単語帳に追加",
+  "wordAlreadyExists": "すでに単語帳にある単語です",
+  "generatingSuggestions": "新しい提案を生成しています...",
+  "originalVsCorrected": "原文 vs 訂正文",
+  "scores": "スコア",
+  "casualExpression": "カジュアルな表現",
+  "formalExpression": "フォーマルな表現",
+  "searchUnknownWords": "わからない単語を検索..."
+}

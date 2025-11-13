@@ -1,0 +1,408 @@
+{
+  "@@locale": "ko",
+  "appTitle": "PolyLog",
+  "signInWithGoogle": "Google로 로그인",
+  "writeDiary": "일기 쓰기",
+  "suggestions": "제안",
+  "corrections": "교정",
+  "natural": "자연스러운 표현",
+  "vocab": "단어장",
+  "home": "홈",
+  "feed": "피드",
+  "dashboard": "대시보드",
+  "profile": "프로필",
+  "settings": "설정",
+  "signOut": "로그아웃",
+  "streak": "연속 일수",
+  "topicIdeas": "주제 아이디어",
+  "sentenceStarters": "문장 시작하기",
+  "reflectiveQuestions": "성찰 질문",
+  "saveEntry": "저장",
+  "cancel": "취소",
+  "delete": "삭제",
+  "edit": "수정",
+  "share": "공유",
+  "mood": "기분",
+  "happy": "행복",
+  "sad": "슬픔",
+  "angry": "화남",
+  "calm": "평온",
+  "visibility": "공개 설정",
+  "private": "비공개",
+  "anonymous": "익명",
+  "casual": "편한 말투",
+  "formal": "격식 있는 말투",
+  "grammarNotes": "문법 노트",
+  "score": "점수",
+  "fluency": "유창성",
+  "accuracy": "정확성",
+  "loading": "로딩 중...",
+  "error": "오류",
+  "retry": "재시도",
+  "appearance": "화면 설정",
+  "darkMode": "다크 모드",
+  "language": "언어",
+  "uiLanguage": "앱 언어",
+  "learningLanguages": "학습 언어",
+  "aiExplanationLanguage": "AI 설명 언어",
+  "account": "계정",
+  "logOut": "로그아웃",
+  "selectUILanguage": "앱 언어 선택",
+  "selectLearningLanguages": "학습 언어 선택",
+  "selectAILanguage": "AI 설명 언어 선택",
+  "notSetAllAvailable": "미설정 (모든 언어 사용 가능)",
+  "save": "저장",
+  "welcome": "환영합니다, {name}님!",
+  "@welcome": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "dayStreak": "{count}일 연속",
+  "@dayStreak": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "writeTodayDiary": "오늘의 일기 작성하기",
+  "todaySentence": "오늘의 문장",
+  "topicSuggestions": "일기 거리 제안",
+  "sentenceSuggestions": "문장 시작하기",
+  "reflectiveSuggestions": "성찰 질문",
+  "loadingUserData": "사용자 데이터 로딩 중...",
+  "writeDiaryEntry": "일기 작성",
+  "language": "언어",
+  "pleaseSomething": "내용을 입력해주세요",
+  "textTooLong": "텍스트가 너무 깁니다 (최대 600자)",
+  "entrySaved": "일기가 저장되었습니다! 문장 수정하는 중...",
+  "notLoggedIn": "로그인되지 않음",
+  "writeHere": "여기에 일기를 작성하세요...",
+  "editor": "작성",
+  "records": "기록",
+  "weeklyStudy": "주간 학습량",
+  "commonGrammarMistakes": "자주 틀리는 문법",
+  "newVocabulary": "새로운 단어",
+  "graphWillBeDisplayedHere": "그래프가 여기에 표시됩니다.",
+  "grammarPointsWillBeDisplayedHere": "문법 포인트 목록이 여기에 표시됩니다.",
+  "vocabularyListWillBeDisplayedHere": "단어 목록이 여기에 표시됩니다.",
+  "dayStreakLabel": "연속 일수",
+  "weeklyGoal": "주간 목표",
+  "setWeeklyGoal": "주간 목표 설정",
+  "entriesPerWeek": "일기 {count}개/주",
+  "@entriesPerWeek": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "goal": "목표",
+  "activityStreak": "활동 연속 기록",
+  "howItWorks": "사용 방법",
+  "streakDescription": "각 초록색 사각형은 일기를 작성한 날을 나타냅니다. 색이 진할수록 그날 더 많이 작성한 것입니다.",
+  "entriesCount": "{count}개의 일기",
+  "@entriesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "characterCount": "{count}/600자",
+  "@characterCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "writingPrompts": "작성 도움말",
+  "topicKeywords": "주제 키워드",
+  "suggestionFrom": "제안: {topic}",
+  "@suggestionFrom": {
+    "placeholders": {
+      "topic": {
+        "type": "String"
+      }
+    }
+  },
+  "tapToUse": "탭하여 사용하기",
+  "today": "오늘",
+  "yesterday": "어제",
+  "noEntriesYet": "아직 작성한 일기가 없습니다.",
+  "writeYourFirstDiary": "첫 일기를 작성해보세요!",
+  "aiAnalysisComplete": "문장 분석 완료",
+  "aiAnalyzing": "문장 분석 중...",
+  "onboardingSetupTitle": "학습 설정",
+  "onboardingNativeLanguageTitle": "모국어를 선택하세요",
+  "onboardingLearningLanguageTitle": "학습할 언어를 선택하세요",
+  "onboardingSelectAtLeastOne": "학습할 언어를 하나 이상 선택해주세요",
+  "onboardingSelectLevelFor": "{language}의 레벨을 선택해주세요",
+  "@onboardingSelectLevelFor": {
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "onboardingUserNotFound": "사용자 정보를 찾을 수 없습니다.",
+  "onboardingSaveFailed": "설정을 저장하지 못했어요: {error}",
+  "@onboardingSaveFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "onboardingLevelQuestion": "얼마나 학습해 보셨나요?",
+  "onboardingPresetBeginnerLabel": "초급",
+  "onboardingPresetBeginnerSubtitle": "기초 표현 중심",
+  "onboardingPresetIntermediateLabel": "중급",
+  "onboardingPresetIntermediateSubtitle": "일상 대화 가능",
+  "onboardingPresetAdvancedLabel": "고급",
+  "onboardingPresetAdvancedSubtitle": "복잡한 주제도 가능",
+  "onboardingShowDetailedLevels": "세부 레벨 선택 보기",
+  "onboardingHideDetailedLevels": "간단 선택으로 돌아가기",
+  "onboardingDetailedLevelHeader": "세부 CEFR 레벨 선택",
+  "onboardingPresetSelected": "{label} 수준으로 설정되었습니다.",
+  "@onboardingPresetSelected": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "onboardingCurrentSelection": "현재 선택: {level}",
+  "@onboardingCurrentSelection": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "onboardingStartButton": "시작하기",
+  "onboardingChangeLaterNote": "나중에 설정에서 언제든 다시 바꿀 수 있어요.",
+  "onboardingLanguageKoLabel": "한국어 (Korean)",
+  "onboardingLanguageJaLabel": "일본어 (Japanese)",
+  "onboardingLanguageEnLabel": "영어 (English)",
+  "onboardingLanguageDeLabel": "독일어 (Deutsch)",
+  "onboardingLanguageEsLabel": "스페인어 (Español)",
+  "onboardingLanguageArLabel": "아랍어 (العربية)",
+  "onboardingLanguageZhLabel": "중국어 (中文)",
+  "onboardingLanguageFrLabel": "프랑스어 (Français)",
+  "onboardingLanguageRuLabel": "러시아어 (Русский)",
+  "onboardingLanguagePtLabel": "포르투갈어 (Português)",
+  "onboardingLanguageItLabel": "이탈리아어 (Italiano)",
+  "onboardingLanguageViLabel": "베트남어 (Tiếng Việt)",
+  "onboardingLanguageThLabel": "태국어 (ไทย)",
+  "onboardingLevelA1": "A1 · 초급",
+  "onboardingLevelA2": "A2 · 기초",
+  "onboardingLevelB1": "B1 · 중급",
+  "onboardingLevelB2": "B2 · 중상급",
+  "onboardingLevelC1": "C1 · 고급",
+  "onboardingLevelC2": "C2 · 원어민에 가까움",
+  "onboardingSubtitle": "일기를 쓰며 언어를 배워요",
+  "onboardingFeature1Title": "어떤 언어로든 작성",
+  "onboardingFeature1Desc": "일본어, 한국어, 영어로 자유롭게 표현하세요",
+  "onboardingFeature2Title": "AI 기반 피드백",
+  "onboardingFeature2Desc": "즉각적인 교정과 함께 실수에서 배우세요",
+  "onboardingFeature3Title": "매일 습관 만들기",
+  "onboardingFeature3Desc": "연속 기록을 추적하고 목표를 달성하세요",
+  "loginRequired": "로그인이 필요합니다",
+  "errorOccurred": "오류가 발생했습니다",
+  "errorWithMessage": "오류: {message}",
+  "@errorWithMessage": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "modelDownloadComplete": "모델 다운로드 완료",
+  "downloadFailed": "다운로드 실패: {error}",
+  "@downloadFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteModel": "모델 삭제",
+  "deleteModelConfirm": "다운로드한 모델을 삭제하시겠습니까?\n(1.1GB 확보)",
+  "modelDeleted": "모델 삭제 완료",
+  "aiModel": "AI 모델",
+  "vocabulary": "단어장",
+  "debugInfo": "디버그 정보",
+  "initializationStatus": "초기화 상태",
+  "cacheSize": "캐시 크기",
+  "cacheHitRate": "캐시 적중률",
+  "systemInfo": "시스템 정보",
+  "clearCache": "캐시 클리어",
+  "cacheCleared": "캐시 클리어 완료",
+  "addAllWords": "모든 단어 추가 ({count}개)",
+  "@addAllWords": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "refresh": "새로고침",
+  "loadingData": "데이터 로딩 중...",
+  "wordAdded": "{word}이(가) 단어장에 추가되었습니다",
+  "@wordAdded": {
+    "placeholders": {
+      "word": {
+        "type": "String"
+      }
+    }
+  },
+  "noGrammarData": "아직 문법 데이터가 없습니다.\n일기를 작성하고 AI 분석을 받아보세요!",
+  "repeatCount": "{count}회 반복",
+  "@repeatCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "grammarErrorEntries": "문법 오류 일기",
+  "entriesWithGrammar": "해당 문법이 포함된 일기",
+  "noEntriesWithGrammar": "해당 문법이 포함된 일기가 없습니다",
+  "generatingNewSuggestion": "새로운 제안을 생성하고 있습니다...",
+  "viewAllWords": "모든 단어 보기",
+  "viewDebugInfo": "🐛 디버그 정보 보기",
+  "status": "상태",
+  "onDeviceAI": "온디바이스 AI",
+  "modelDownloaded": "다운로드 완료 ({size} MB)",
+  "@modelDownloaded": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "modelNotDownloaded": "다운로드 필요 (~1.1 GB)",
+  "modelDownloadDescription": "모델을 다운로드하면 오프라인에서도 단어 추천을 사용할 수 있습니다.",
+  "reviewStart": "복습 시작",
+  "reviewComplete": "복습 완료",
+  "allReviewsComplete": "모든 복습을 완료했습니다!",
+  "goBack": "돌아가기",
+  "reviewProgress": "복습 ({current}/{total})",
+  "@reviewProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "tapToShowAnswer": "탭하여 답 보기",
+  "howWellRemember": "이 단어를 얼마나 잘 기억하셨나요?",
+  "ratingAgain": "다시",
+  "ratingHard": "어려움",
+  "ratingGood": "좋음",
+  "ratingEasy": "쉬움",
+  "korean": "한국어",
+  "learningProgress": "학습 현황",
+  "dueForReview": "복습 예정",
+  "todayCompleted": "오늘 완료",
+  "newCards": "새 카드",
+  "learning": "학습 중",
+  "totalWords": "총 단어",
+  "close": "닫기",
+  "addWord": "단어 추가",
+  "word": "단어",
+  "meaning": "의미",
+  "enterWordAndMeaning": "단어와 의미를 입력해주세요",
+  "add": "추가",
+  "all": "전체",
+  "reviewing": "복습 중",
+  "noCardsInCategory": "{category} 카드가 없습니다",
+  "@noCardsInCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "newCard": "새 카드",
+  "problemCard": "문제 카드",
+  "next": "다음",
+  "now": "지금",
+  "daysLater": "{days}일 후",
+  "@daysLater": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "hoursLater": "{hours}시간 후",
+  "@hoursLater": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "minutesLater": "{minutes}분 후",
+  "@minutesLater": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "soon": "곧",
+  "viewAllWords": "모든 단어 보기",
+  "viewDebugInfo": "🐛 디버그 정보 보기",
+  "status": "상태",
+  "aiReview": "AI 리뷰",
+  "aiAnalysisTakingLong": "AI 분석이 예상보다 오래 걸리고 있습니다",
+  "checkFirebaseLogs": "Firebase Functions 로그를 확인하거나\n잠시 후 다시 시도해주세요",
+  "aiAnalysisInProgress": "AI 분석 진행 중... ({seconds}초)",
+  "@aiAnalysisInProgress": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "retry": "다시 시도",
+  "noVocabularyFound": "추출된 단어가 없습니다",
+  "wordsAddedAndSkipped": "{added}개 추가, {skipped}개 이미 존재",
+  "@wordsAddedAndSkipped": {
+    "placeholders": {
+      "added": {
+        "type": "int"
+      },
+      "skipped": {
+        "type": "int"
+      }
+    }
+  },
+  "wordsAddedCount": "{count}개의 단어가 추가되었습니다",
+  "@wordsAddedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "allWordsAlreadyExist": "모든 단어가 이미 단어장에 있습니다",
+  "addToVocabulary": "단어장에 추가",
+  "wordAlreadyExists": "이미 단어장에 있는 단어입니다",
+  "generatingSuggestions": "새로운 제안을 생성하고 있습니다...",
+  "originalVsCorrected": "원문 vs 교정본",
+  "scores": "점수",
+  "casualExpression": "편한 말투",
+  "formalExpression": "격식 있는 말투",
+  "searchUnknownWords": "모르는 단어를 검색하세요..."
+}

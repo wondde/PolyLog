@@ -1,0 +1,1 @@
+export const VOCAB_PROMPT = `Extract vocabulary words from the text that are worth learning for a language learner at the specified level. Include part of speech, meanings, proficiency level, and example sentences.`;

@@ -12,7 +12,8 @@ import 'package:polylog/features/auth/presentation/onboarding_page.dart';
 import 'package:polylog/providers.dart';
 
 void main() {
-  testWidgets('shows sign-in button when no user is logged in', (WidgetTester tester) async {
+  testWidgets('shows sign-in button when no user is logged in',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
       ProviderScope(
         overrides: [

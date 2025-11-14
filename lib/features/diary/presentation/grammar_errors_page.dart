@@ -87,10 +87,12 @@ class GrammarErrorEntriesPage extends ConsumerStatefulWidget {
   const GrammarErrorEntriesPage({super.key, required this.grammarNote});
 
   @override
-  ConsumerState<GrammarErrorEntriesPage> createState() => _GrammarErrorEntriesPageState();
+  ConsumerState<GrammarErrorEntriesPage> createState() =>
+      _GrammarErrorEntriesPageState();
 }
 
-class _GrammarErrorEntriesPageState extends ConsumerState<GrammarErrorEntriesPage> {
+class _GrammarErrorEntriesPageState
+    extends ConsumerState<GrammarErrorEntriesPage> {
   @override
   Widget build(BuildContext context) {
     final authState = ref.watch(authStateProvider);
@@ -112,7 +114,8 @@ class _GrammarErrorEntriesPageState extends ConsumerState<GrammarErrorEntriesPag
       body: entriesAsync.when(
         data: (allEntries) {
           return FutureBuilder<List<String>>(
-            future: _filterEntriesWithGrammar(allEntries, widget.grammarNote, ref),
+            future:
+                _filterEntriesWithGrammar(allEntries, widget.grammarNote, ref),
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
                 return const Center(child: CircularProgressIndicator());
@@ -125,7 +128,9 @@ class _GrammarErrorEntriesPageState extends ConsumerState<GrammarErrorEntriesPag
               }
 
               final filteredEntryIds = snapshot.data!;
-              final filteredEntries = allEntries.where((e) => filteredEntryIds.contains(e.id)).toList();
+              final filteredEntries = allEntries
+                  .where((e) => filteredEntryIds.contains(e.id))
+                  .toList();
 
               return ListView.builder(
                 padding: const EdgeInsets.all(16.0),
@@ -176,7 +181,8 @@ class _GrammarErrorEntriesPageState extends ConsumerState<GrammarErrorEntriesPag
         final repository = ref.read(diaryRepositoryProvider);
         final ai = await repository.getAI(entry.id);
 
-        if (ai != null && ai.grammarNotes.any((note) => note.contains(grammarNote))) {
+        if (ai != null &&
+            ai.grammarNotes.any((note) => note.contains(grammarNote))) {
           matchingEntryIds.add(entry.id);
         }
       } catch (e) {

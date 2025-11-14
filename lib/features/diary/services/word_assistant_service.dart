@@ -42,10 +42,9 @@ class WordAssistantService {
 
       if (response.statusCode == 200) {
         final data = jsonDecode(response.body);
-        final suggestions = (data['suggestions'] as List?)
-                ?.map((e) => e.toString())
-                .toList() ??
-            [];
+        final suggestions =
+            (data['suggestions'] as List?)?.map((e) => e.toString()).toList() ??
+                [];
 
         return suggestions;
       } else {

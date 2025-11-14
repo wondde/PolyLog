@@ -19,13 +19,22 @@ class MainScaffold extends StatelessWidget {
         elevation: 0,
         labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
         backgroundColor: Theme.of(context).colorScheme.surfaceContainerLowest,
-        indicatorColor: Theme.of(context).colorScheme.surfaceContainerHighest.withValues(alpha: 0.5),
+        indicatorColor: Theme.of(context)
+            .colorScheme
+            .surfaceContainerHighest
+            .withValues(alpha: 0.5),
         overlayColor: WidgetStateProperty.resolveWith<Color?>((states) {
           if (states.contains(WidgetState.pressed)) {
-            return Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.08);
+            return Theme.of(context)
+                .colorScheme
+                .onSurface
+                .withValues(alpha: 0.08);
           }
           if (states.contains(WidgetState.hovered)) {
-            return Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.04);
+            return Theme.of(context)
+                .colorScheme
+                .onSurface
+                .withValues(alpha: 0.04);
           }
           return null;
         }),

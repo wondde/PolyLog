@@ -2,4 +2,3 @@
 export 'user_model.dart';
 export 'entry_model.dart';
 export 'entry_ai_model.dart';
-export 'suggestion_model.dart';

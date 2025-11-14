@@ -67,7 +67,8 @@ class StreakPage extends ConsumerWidget {
                         const SizedBox(height: 24),
                         const Divider(),
                         ListTile(
-                          leading: const Icon(Icons.local_fire_department, color: Colors.orange),
+                          leading: const Icon(Icons.local_fire_department,
+                              color: Colors.orange),
                           title: Text(l10n.howItWorks),
                           subtitle: Text(l10n.streakDescription),
                         )
@@ -76,7 +77,8 @@ class StreakPage extends ConsumerWidget {
                   );
                 },
                 loading: () => const Center(child: CircularProgressIndicator()),
-                error: (err, stack) => Center(child: Text('${l10n.error}: $err')),
+                error: (err, stack) =>
+                    Center(child: Text('${l10n.error}: $err')),
               ),
     );
   }

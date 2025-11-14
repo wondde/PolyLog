@@ -153,7 +153,8 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                   width: double.maxFinite,
                   child: ListView.separated(
                     itemCount: languagePickerOrder.length,
-                    separatorBuilder: (context, index) => const SizedBox(height: 8),
+                    separatorBuilder: (context, index) =>
+                        const SizedBox(height: 8),
                     itemBuilder: (context, index) {
                       final code = languagePickerOrder[index];
                       final isActive = currentLang == code;
@@ -166,7 +167,8 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                         },
                         borderRadius: BorderRadius.circular(12),
                         child: Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 16, vertical: 12),
                           decoration: BoxDecoration(
                             color: isActive
                                 ? theme.colorScheme.primaryContainer
@@ -175,7 +177,8 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                             border: Border.all(
                               color: isActive
                                   ? theme.colorScheme.primary
-                                  : theme.colorScheme.outline.withValues(alpha: 0.2),
+                                  : theme.colorScheme.outline
+                                      .withValues(alpha: 0.2),
                               width: isActive ? 2 : 1,
                             ),
                           ),
@@ -190,8 +193,12 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                                 child: Text(
                                   label,
                                   style: theme.textTheme.bodyLarge?.copyWith(
-                                    fontWeight: isActive ? FontWeight.bold : FontWeight.normal,
-                                    color: isActive ? theme.colorScheme.primary : null,
+                                    fontWeight: isActive
+                                        ? FontWeight.bold
+                                        : FontWeight.normal,
+                                    color: isActive
+                                        ? theme.colorScheme.primary
+                                        : null,
                                   ),
                                 ),
                               ),
@@ -247,7 +254,8 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                       width: double.maxFinite,
                       child: ListView.separated(
                         itemCount: languagePickerOrder.length,
-                        separatorBuilder: (context, index) => const SizedBox(height: 8),
+                        separatorBuilder: (context, index) =>
+                            const SizedBox(height: 8),
                         itemBuilder: (context, index) {
                           final code = languagePickerOrder[index];
                           final isSelected = selectedLangs.contains(code);
@@ -265,7 +273,8 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                             },
                             borderRadius: BorderRadius.circular(12),
                             child: Container(
-                              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 16, vertical: 12),
                               decoration: BoxDecoration(
                                 color: isSelected
                                     ? theme.colorScheme.primaryContainer
@@ -274,7 +283,8 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                                 border: Border.all(
                                   color: isSelected
                                       ? theme.colorScheme.primary
-                                      : theme.colorScheme.outline.withValues(alpha: 0.2),
+                                      : theme.colorScheme.outline
+                                          .withValues(alpha: 0.2),
                                   width: isSelected ? 2 : 1,
                                 ),
                               ),
@@ -288,9 +298,14 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                                   Expanded(
                                     child: Text(
                                       label,
-                                      style: theme.textTheme.bodyLarge?.copyWith(
-                                        fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
-                                        color: isSelected ? theme.colorScheme.primary : null,
+                                      style:
+                                          theme.textTheme.bodyLarge?.copyWith(
+                                        fontWeight: isSelected
+                                            ? FontWeight.bold
+                                            : FontWeight.normal,
+                                        color: isSelected
+                                            ? theme.colorScheme.primary
+                                            : null,
                                       ),
                                     ),
                                   ),
@@ -325,7 +340,8 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                               // 학습 언어 업데이트
                               await ref
                                   .read(authRepositoryProvider)
-                                  .updateLearningLanguages(selectedLangs.toList());
+                                  .updateLearningLanguages(
+                                      selectedLangs.toList());
 
                               // Provider 갱신
                               ref.invalidate(currentUserDocProvider);
@@ -333,12 +349,13 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                               // 성공 메시지
                               if (context.mounted) {
                                 final langNames = selectedLangs
-                                    .map((code) => localizedLanguageLabel(code, l10n))
+                                    .map((code) =>
+                                        localizedLanguageLabel(code, l10n))
                                     .join(', ');
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
-                                    content:
-                                        Text('${l10n.learningLanguages}: $langNames'),
+                                    content: Text(
+                                        '${l10n.learningLanguages}: $langNames'),
                                     duration: const Duration(seconds: 2),
                                   ),
                                 );
@@ -508,7 +525,8 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                   width: double.maxFinite,
                   child: ListView.separated(
                     itemCount: languagePickerOrder.length,
-                    separatorBuilder: (context, index) => const SizedBox(height: 8),
+                    separatorBuilder: (context, index) =>
+                        const SizedBox(height: 8),
                     itemBuilder: (context, index) {
                       final code = languagePickerOrder[index];
                       final isActive = currentAILang == code;
@@ -521,7 +539,8 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                             Navigator.pop(context);
 
                             // AI 언어 업데이트
-                            final newPrefs = currentPrefs.toMap()..['aiLang'] = code;
+                            final newPrefs = currentPrefs.toMap()
+                              ..['aiLang'] = code;
                             await ref
                                 .read(authRepositoryProvider)
                                 .updateUserPreferences(newPrefs);
@@ -546,7 +565,8 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(
                                   content: Text('${l10n.error}: $e'),
-                                  backgroundColor: Theme.of(context).colorScheme.error,
+                                  backgroundColor:
+                                      Theme.of(context).colorScheme.error,
                                 ),
                               );
                             }
@@ -554,7 +574,8 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                         },
                         borderRadius: BorderRadius.circular(12),
                         child: Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 16, vertical: 12),
                           decoration: BoxDecoration(
                             color: isActive
                                 ? theme.colorScheme.primaryContainer
@@ -563,7 +584,8 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                             border: Border.all(
                               color: isActive
                                   ? theme.colorScheme.primary
-                                  : theme.colorScheme.outline.withValues(alpha: 0.2),
+                                  : theme.colorScheme.outline
+                                      .withValues(alpha: 0.2),
                               width: isActive ? 2 : 1,
                             ),
                           ),
@@ -578,8 +600,12 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                                 child: Text(
                                   label,
                                   style: theme.textTheme.bodyLarge?.copyWith(
-                                    fontWeight: isActive ? FontWeight.bold : FontWeight.normal,
-                                    color: isActive ? theme.colorScheme.primary : null,
+                                    fontWeight: isActive
+                                        ? FontWeight.bold
+                                        : FontWeight.normal,
+                                    color: isActive
+                                        ? theme.colorScheme.primary
+                                        : null,
                                   ),
                                 ),
                               ),

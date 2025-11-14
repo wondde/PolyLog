@@ -60,7 +60,8 @@ class VocabularyListPage extends ConsumerWidget {
             itemCount: vocab.length,
             itemBuilder: (context, index) {
               final item = vocab[index];
-              final meaning = item.meanings.isNotEmpty ? item.meanings.first : '';
+              final meaning =
+                  item.meanings.isNotEmpty ? item.meanings.first : '';
               final level = item.level ?? 'A1';
 
               return Card(

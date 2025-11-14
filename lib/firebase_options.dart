@@ -54,9 +54,10 @@ class DefaultFirebaseOptions {
     messagingSenderId: '470445554425',
     projectId: 'exam-4516e',
     storageBucket: 'exam-4516e.firebasestorage.app',
-    androidClientId: '470445554425-o902ft83cbh3s8hnga9l7p854pjvm1st.apps.googleusercontent.com',
-    iosClientId: '470445554425-702la0cov3tegkidevjloijgmfsh2a6n.apps.googleusercontent.com',
+    androidClientId:
+        '470445554425-o902ft83cbh3s8hnga9l7p854pjvm1st.apps.googleusercontent.com',
+    iosClientId:
+        '470445554425-702la0cov3tegkidevjloijgmfsh2a6n.apps.googleusercontent.com',
     iosBundleId: 'com.seungwon.polylog',
   );
-
 }

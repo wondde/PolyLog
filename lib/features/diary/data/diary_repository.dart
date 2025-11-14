@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:cloud_functions/cloud_functions.dart';
+// import 'package:cloud_functions/cloud_functions.dart';
 import 'package:uuid/uuid.dart';
 import '../domain/models.dart';
 
@@ -74,20 +74,6 @@ class DiaryRepository {
     final doc = await _db.collection('entry_ai').doc(id).get();
     if (!doc.exists) return null;
     return EntryAIModel.fromFirestore(doc);
-  }
-
-  /// 제안 조회
-  Future<SuggestionModel?> getSuggestion(String uid, String lang) async {
-    final query = await _db
-        .collection('suggestions')
-        .where('uid', isEqualTo: uid)
-        .where('lang', isEqualTo: lang)
-        .orderBy('createdAt', descending: true)
-        .limit(1)
-        .get();
-
-    if (query.docs.isEmpty) return null;
-    return SuggestionModel.fromFirestore(query.docs.first);
   }
 
   /// 공개 피드 조회
@@ -233,43 +219,5 @@ class DiaryRepository {
     }
 
     return allVocab;
-  }
-
-  /// Cloud Function을 호출하여 새로운 제안 생성
-  Future<String> generateSuggestions(String lang) async {
-    final functions = FirebaseFunctions.instanceFor(region: 'asia-northeast3');
-    final callable = functions.httpsCallable('createSuggestions');
-
-    final result = await callable.call({'lang': lang});
-    return result.data['docId'] as String;
-  }
-
-  /// 사용자의 최신 제안 가져오기 (특정 언어)
-  Future<SuggestionModel?> getLatestSuggestion(String uid, String lang) async {
-    final snapshot = await _db
-        .collection('suggestions')
-        .where('uid', isEqualTo: uid)
-        .where('lang', isEqualTo: lang)
-        .orderBy('createdAt', descending: true)
-        .limit(1)
-        .get();
-
-    if (snapshot.docs.isEmpty) return null;
-    return SuggestionModel.fromFirestore(snapshot.docs.first);
-  }
-
-  /// 제안 스트림 (실시간 업데이트)
-  Stream<SuggestionModel?> watchLatestSuggestion(String uid, String lang) {
-    return _db
-        .collection('suggestions')
-        .where('uid', isEqualTo: uid)
-        .where('lang', isEqualTo: lang)
-        .orderBy('createdAt', descending: true)
-        .limit(1)
-        .snapshots()
-        .map((snapshot) {
-      if (snapshot.docs.isEmpty) return null;
-      return SuggestionModel.fromFirestore(snapshot.docs.first);
-    });
   }
 }

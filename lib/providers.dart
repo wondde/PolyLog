@@ -192,15 +192,6 @@ final FutureProviderFamily<Map<String, int>, String> cardCountByStateProvider =
 
 // Suggestions
 
-/// 최신 제안 Provider (특정 언어)
-final StreamProviderFamily<SuggestionModel?, ({String uid, String lang})>
-    latestSuggestionProvider =
-    StreamProvider.family<SuggestionModel?, ({String uid, String lang})>(
-        (ref, params) {
-  final repository = ref.watch(diaryRepositoryProvider);
-  return repository.watchLatestSuggestion(params.uid, params.lang);
-});
-
 /// Firebase ML Kit 번역 Repository Provider
 final translationRepositoryProvider =
     Provider<MLKitTranslationRepository>((ref) {

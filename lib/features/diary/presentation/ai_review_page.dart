@@ -71,12 +71,14 @@ class _AIReviewPageState extends ConsumerState<AIReviewPage> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const Icon(Icons.access_time, size: 64, color: Colors.orange),
+                          const Icon(Icons.access_time,
+                              size: 64, color: Colors.orange),
                           const SizedBox(height: 16),
                           Text(
                             l10n.aiAnalysisTakingLong,
                             textAlign: TextAlign.center,
-                            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                            style: const TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.bold),
                           ),
                           const SizedBox(height: 12),
                           Text(
@@ -87,7 +89,8 @@ class _AIReviewPageState extends ConsumerState<AIReviewPage> {
                           const SizedBox(height: 8),
                           Text(
                             'Entry ID: ${widget.entryId}',
-                            style: const TextStyle(fontSize: 12, color: Colors.grey),
+                            style: const TextStyle(
+                                fontSize: 12, color: Colors.grey),
                           ),
                           const SizedBox(height: 24),
                           ElevatedButton.icon(
@@ -117,7 +120,8 @@ class _AIReviewPageState extends ConsumerState<AIReviewPage> {
                       const SizedBox(height: 8),
                       Text(
                         'Entry ID: ${widget.entryId}',
-                        style: const TextStyle(fontSize: 12, color: Colors.grey),
+                        style:
+                            const TextStyle(fontSize: 12, color: Colors.grey),
                       ),
                     ],
                   ),
@@ -168,7 +172,8 @@ class _AIReviewPageState extends ConsumerState<AIReviewPage> {
                     const SizedBox(height: 16),
                     Text(
                       l10n.errorOccurred,
-                      style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                      style: const TextStyle(
+                          fontSize: 18, fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(height: 12),
                     Text(
@@ -371,7 +376,9 @@ class _VocabTab extends ConsumerWidget {
 
                     for (final vocab in ai.vocab) {
                       try {
-                        await ref.read(vocabularyControllerProvider.notifier).addCard(
+                        await ref
+                            .read(vocabularyControllerProvider.notifier)
+                            .addCard(
                               uid: user.uid,
                               lemma: vocab.lemma,
                               pos: vocab.pos,
@@ -393,7 +400,8 @@ class _VocabTab extends ConsumerWidget {
                       final l10n = AppLocalizations.of(context)!;
                       String message = '';
                       if (addedCount > 0 && skippedCount > 0) {
-                        message = l10n.wordsAddedAndSkipped(addedCount, skippedCount);
+                        message =
+                            l10n.wordsAddedAndSkipped(addedCount, skippedCount);
                       } else if (addedCount > 0) {
                         message = l10n.wordsAddedCount(addedCount);
                       } else if (skippedCount > 0) {
@@ -407,7 +415,9 @@ class _VocabTab extends ConsumerWidget {
                   } catch (e) {
                     if (context.mounted) {
                       ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(content: Text(AppLocalizations.of(context)!.errorWithMessage(e.toString()))),
+                        SnackBar(
+                            content: Text(AppLocalizations.of(context)!
+                                .errorWithMessage(e.toString()))),
                       );
                     }
                   }
@@ -425,122 +435,144 @@ class _VocabTab extends ConsumerWidget {
                 itemCount: ai.vocab.length,
                 itemBuilder: (context, index) {
                   final vocab = ai.vocab[index];
-            return Card(
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      children: [
-                        Expanded(
-                          child: Text(
-                            vocab.lemma,
-                            style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                                  fontWeight: FontWeight.bold,
-                                ),
-                          ),
-                        ),
-                        const SizedBox(width: 8),
-                        Chip(
-                          label: Text(vocab.pos),
-                          materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                        ),
-                        if (vocab.level != null) ...[
-                          const SizedBox(width: 8),
-                          Chip(
-                            label: Text(vocab.level!),
-                            materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                          ),
-                        ],
-                        IconButton(
-                          icon: const Icon(Icons.add_circle_outline),
-                          tooltip: AppLocalizations.of(context)!.addToVocabulary,
-                          onPressed: () async {
-                            try {
-                              // 일기의 언어 가져오기
-                              final entryAsync = ref.read(userEntriesProvider(user.uid));
-                              String lang = 'en';
-                              entryAsync.when(
-                                data: (entries) {
-                                  final entry = entries.firstWhere(
-                                    (e) => e.id == entryId,
-                                    orElse: () => entries.first,
-                                  );
-                                  lang = entry.lang;
-                                },
-                                loading: () {},
-                                error: (_, __) {},
-                              );
-
-                              await ref.read(vocabularyControllerProvider.notifier).addCard(
-                                    uid: user.uid,
-                                    lemma: vocab.lemma,
-                                    pos: vocab.pos,
-                                    meanings: vocab.meanings,
-                                    level: vocab.level ?? 'unknown',
-                                    example: vocab.example,
-                                    lang: lang,
-                                    sourceEntryId: entryId,
-                                  );
-                              if (context.mounted) {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(content: Text(AppLocalizations.of(context)!.wordAdded(vocab.lemma))),
-                                );
-                              }
-                            } catch (e) {
-                              if (context.mounted) {
-                                final l10n = AppLocalizations.of(context)!;
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    content: Text(e.toString().contains('이미 단어장에 존재')
-                                        ? l10n.wordAlreadyExists
-                                        : l10n.errorWithMessage(e.toString())),
-                                  ),
-                                );
-                              }
-                            }
-                          },
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 8),
-                    ...vocab.meanings.map((meaning) => Padding(
-                          padding: const EdgeInsets.only(left: 8.0, top: 4.0),
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                  return Card(
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
                             children: [
-                              const Text('• '),
-                              Expanded(child: Text(meaning)),
+                              Expanded(
+                                child: Text(
+                                  vocab.lemma,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleMedium
+                                      ?.copyWith(
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                ),
+                              ),
+                              const SizedBox(width: 8),
+                              Chip(
+                                label: Text(vocab.pos),
+                                materialTapTargetSize:
+                                    MaterialTapTargetSize.shrinkWrap,
+                              ),
+                              if (vocab.level != null) ...[
+                                const SizedBox(width: 8),
+                                Chip(
+                                  label: Text(vocab.level!),
+                                  materialTapTargetSize:
+                                      MaterialTapTargetSize.shrinkWrap,
+                                ),
+                              ],
+                              IconButton(
+                                icon: const Icon(Icons.add_circle_outline),
+                                tooltip: AppLocalizations.of(context)!
+                                    .addToVocabulary,
+                                onPressed: () async {
+                                  try {
+                                    // 일기의 언어 가져오기
+                                    final entryAsync =
+                                        ref.read(userEntriesProvider(user.uid));
+                                    String lang = 'en';
+                                    entryAsync.when(
+                                      data: (entries) {
+                                        final entry = entries.firstWhere(
+                                          (e) => e.id == entryId,
+                                          orElse: () => entries.first,
+                                        );
+                                        lang = entry.lang;
+                                      },
+                                      loading: () {},
+                                      error: (_, __) {},
+                                    );
+
+                                    await ref
+                                        .read(vocabularyControllerProvider
+                                            .notifier)
+                                        .addCard(
+                                          uid: user.uid,
+                                          lemma: vocab.lemma,
+                                          pos: vocab.pos,
+                                          meanings: vocab.meanings,
+                                          level: vocab.level ?? 'unknown',
+                                          example: vocab.example,
+                                          lang: lang,
+                                          sourceEntryId: entryId,
+                                        );
+                                    if (context.mounted) {
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        SnackBar(
+                                            content: Text(
+                                                AppLocalizations.of(context)!
+                                                    .wordAdded(vocab.lemma))),
+                                      );
+                                    }
+                                  } catch (e) {
+                                    if (context.mounted) {
+                                      final l10n =
+                                          AppLocalizations.of(context)!;
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        SnackBar(
+                                          content: Text(e
+                                                  .toString()
+                                                  .contains('이미 단어장에 존재')
+                                              ? l10n.wordAlreadyExists
+                                              : l10n.errorWithMessage(
+                                                  e.toString())),
+                                        ),
+                                      );
+                                    }
+                                  }
+                                },
+                              ),
                             ],
                           ),
-                        )),
-                    if (vocab.example.isNotEmpty) ...[
-                      const SizedBox(height: 8),
-                      Container(
-                        padding: const EdgeInsets.all(8),
-                        decoration: BoxDecoration(
-                          color: Colors.grey.shade100,
-                          borderRadius: BorderRadius.circular(4),
-                        ),
-                        child: Text(
-                          vocab.example,
-                          style: const TextStyle(fontStyle: FontStyle.italic),
-                        ),
+                          const SizedBox(height: 8),
+                          ...vocab.meanings.map((meaning) => Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 8.0, top: 4.0),
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const Text('• '),
+                                    Expanded(child: Text(meaning)),
+                                  ],
+                                ),
+                              )),
+                          if (vocab.example.isNotEmpty) ...[
+                            const SizedBox(height: 8),
+                            Container(
+                              padding: const EdgeInsets.all(8),
+                              decoration: BoxDecoration(
+                                color: Colors.grey.shade100,
+                                borderRadius: BorderRadius.circular(4),
+                              ),
+                              child: Text(
+                                vocab.example,
+                                style: const TextStyle(
+                                    fontStyle: FontStyle.italic),
+                              ),
+                            ),
+                          ],
+                        ],
                       ),
-                    ],
-                  ],
-                ),
+                    ),
+                  );
+                },
               ),
-            );
-          },
-        ),
             ),
           ],
         );
       },
       loading: () => const Center(child: CircularProgressIndicator()),
-      error: (_, __) => Center(child: Text(AppLocalizations.of(context)!.errorOccurred)),
+      error: (_, __) =>
+          Center(child: Text(AppLocalizations.of(context)!.errorOccurred)),
     );
   }
 }

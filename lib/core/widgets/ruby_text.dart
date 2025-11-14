@@ -48,11 +48,12 @@ class RubyText extends StatelessWidget {
                   padding: const EdgeInsets.only(top: 12),
                   child: Text(
                     base,
-                    style: style ?? const TextStyle(
-                      color: Color(0xFF0F172A),
-                      fontSize: 16,
-                      height: 1.5,
-                    ),
+                    style: style ??
+                        const TextStyle(
+                          color: Color(0xFF0F172A),
+                          fontSize: 16,
+                          height: 1.5,
+                        ),
                   ),
                 ),
                 // 루비 텍스트 (히라가나) - 한자 위에 배치
@@ -64,7 +65,8 @@ class RubyText extends StatelessWidget {
                     child: Text(
                       ruby,
                       style: TextStyle(
-                        fontSize: (style?.fontSize ?? 16) * 0.5, // 메인 텍스트의 50% 크기
+                        fontSize:
+                            (style?.fontSize ?? 16) * 0.5, // 메인 텍스트의 50% 크기
                         color: const Color(0xFF64748B),
                         height: 1.0,
                         letterSpacing: 0,
@@ -89,11 +91,12 @@ class RubyText extends StatelessWidget {
 
     return RichText(
       text: TextSpan(
-        style: style ?? const TextStyle(
-          color: Color(0xFF0F172A),
-          fontSize: 16,
-          height: 1.8, // 루비를 위한 여유 공간
-        ),
+        style: style ??
+            const TextStyle(
+              color: Color(0xFF0F172A),
+              fontSize: 16,
+              height: 1.8, // 루비를 위한 여유 공간
+            ),
         children: spans,
       ),
     );

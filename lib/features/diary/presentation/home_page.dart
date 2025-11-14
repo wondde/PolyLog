@@ -1093,140 +1093,138 @@ class _HomePageState extends ConsumerState<HomePage> {
               final questions = _getReflectiveQuestions(primaryLang);
 
               return SafeArea(
-                    child: SingleChildScrollView(
-                      child: Padding(
-                        padding: const EdgeInsets.all(16.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            // Welcome section
-                            Text(
-                              l10n.welcome(userData.displayName),
-                              style: Theme.of(context).textTheme.headlineMedium,
-                            ),
-                            const SizedBox(height: 8),
-                            InkWell(
-                              onTap: () => context.push('/streak'),
-                              child: Row(
-                                children: [
-                                  const Icon(Icons.local_fire_department,
-                                      color: Colors.orange),
-                                  const SizedBox(width: 8),
-                                  Text(
-                                    l10n.dayStreak(userData.streak),
-                                    style:
-                                        Theme.of(context).textTheme.titleMedium,
-                                  ),
-                                ],
+                child: SingleChildScrollView(
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        // Welcome section
+                        Text(
+                          l10n.welcome(userData.displayName),
+                          style: Theme.of(context).textTheme.headlineMedium,
+                        ),
+                        const SizedBox(height: 8),
+                        InkWell(
+                          onTap: () => context.push('/streak'),
+                          child: Row(
+                            children: [
+                              const Icon(Icons.local_fire_department,
+                                  color: Colors.orange),
+                              const SizedBox(width: 8),
+                              Text(
+                                l10n.dayStreak(userData.streak),
+                                style: Theme.of(context).textTheme.titleMedium,
                               ),
-                            ),
-                            const SizedBox(height: 24),
-
-                            // Write diary button
-                            SizedBox(
-                              width: double.infinity,
-                              child: ElevatedButton.icon(
-                                onPressed: () {
-                                  context.push('/editor');
-                                },
-                                icon: const Icon(Icons.edit),
-                                label: Text(l10n.writeTodayDiary),
-                                style: ElevatedButton.styleFrom(
-                                  padding:
-                                      const EdgeInsets.symmetric(vertical: 16),
-                                ),
-                              ),
-                            ),
-                            const SizedBox(height: 32),
-
-                            // Language Selector
-                            if (availableLangs.isNotEmpty) ...[
-                              _buildLanguageSelector(
-                                context: context,
-                                availableLangs: availableLangs,
-                                currentLang: primaryLang,
-                                l10n: l10n,
-                                uid: user.uid,
-                              ),
-                              const SizedBox(height: 16),
                             ],
+                          ),
+                        ),
+                        const SizedBox(height: 24),
 
-                            // Topic Suggestions
-                            Row(
-                              children: [
-                                Icon(Icons.lightbulb,
-                                    color: Theme.of(context).primaryColor),
-                                const SizedBox(width: 8),
-                                Text(
-                                  l10n.topicSuggestions,
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .titleLarge
-                                      ?.copyWith(
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                ),
-                                const Spacer(),
-                                IconButton(
-                                  icon: const Icon(Icons.refresh, size: 20),
-                                  tooltip: l10n.refresh,
-                                  onPressed: () {
-                                    setState(() {
-                                      _refreshCounter++;
-                                    });
-                                  },
-                                ),
-                              ],
+                        // Write diary button
+                        SizedBox(
+                          width: double.infinity,
+                          child: ElevatedButton.icon(
+                            onPressed: () {
+                              context.push('/editor');
+                            },
+                            icon: const Icon(Icons.edit),
+                            label: Text(l10n.writeTodayDiary),
+                            style: ElevatedButton.styleFrom(
+                              padding: const EdgeInsets.symmetric(vertical: 16),
                             ),
-                            const SizedBox(height: 12),
-                            _buildSuggestionsList(context, topics),
-                            const SizedBox(height: 24),
+                          ),
+                        ),
+                        const SizedBox(height: 32),
 
-                            // Sentence Starters
-                            Row(
-                              children: [
-                                Icon(Icons.create,
-                                    color: Theme.of(context).primaryColor),
-                                const SizedBox(width: 8),
-                                Text(
-                                  l10n.sentenceSuggestions,
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .titleLarge
-                                      ?.copyWith(
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                ),
-                              ],
-                            ),
-                            const SizedBox(height: 12),
-                            _buildSuggestionsList(context, starters),
-                            const SizedBox(height: 24),
+                        // Language Selector
+                        if (availableLangs.isNotEmpty) ...[
+                          _buildLanguageSelector(
+                            context: context,
+                            availableLangs: availableLangs,
+                            currentLang: primaryLang,
+                            l10n: l10n,
+                            uid: user.uid,
+                          ),
+                          const SizedBox(height: 16),
+                        ],
 
-                            // Reflective Questions
-                            Row(
-                              children: [
-                                Icon(Icons.psychology,
-                                    color: Theme.of(context).primaryColor),
-                                const SizedBox(width: 8),
-                                Text(
-                                  l10n.reflectiveSuggestions,
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .titleLarge
-                                      ?.copyWith(
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                ),
-                              ],
+                        // Topic Suggestions
+                        Row(
+                          children: [
+                            Icon(Icons.lightbulb,
+                                color: Theme.of(context).primaryColor),
+                            const SizedBox(width: 8),
+                            Text(
+                              l10n.topicSuggestions,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleLarge
+                                  ?.copyWith(
+                                    fontWeight: FontWeight.bold,
+                                  ),
                             ),
-                            const SizedBox(height: 12),
-                            _buildSuggestionsList(context, questions),
+                            const Spacer(),
+                            IconButton(
+                              icon: const Icon(Icons.refresh, size: 20),
+                              tooltip: l10n.refresh,
+                              onPressed: () {
+                                setState(() {
+                                  _refreshCounter++;
+                                });
+                              },
+                            ),
                           ],
                         ),
-                      ),
+                        const SizedBox(height: 12),
+                        _buildSuggestionsList(context, topics),
+                        const SizedBox(height: 24),
+
+                        // Sentence Starters
+                        Row(
+                          children: [
+                            Icon(Icons.create,
+                                color: Theme.of(context).primaryColor),
+                            const SizedBox(width: 8),
+                            Text(
+                              l10n.sentenceSuggestions,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleLarge
+                                  ?.copyWith(
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 12),
+                        _buildSuggestionsList(context, starters),
+                        const SizedBox(height: 24),
+
+                        // Reflective Questions
+                        Row(
+                          children: [
+                            Icon(Icons.psychology,
+                                color: Theme.of(context).primaryColor),
+                            const SizedBox(width: 8),
+                            Text(
+                              l10n.reflectiveSuggestions,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleLarge
+                                  ?.copyWith(
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 12),
+                        _buildSuggestionsList(context, questions),
+                      ],
                     ),
-                  );
+                  ),
+                ),
+              );
             },
             loading: () => const Center(child: CircularProgressIndicator()),
             error: (err, stack) => Center(child: Text('Error: $err')),
@@ -1253,10 +1251,16 @@ class _HomePageState extends ConsumerState<HomePage> {
               child: Container(
                 padding: const EdgeInsets.all(14),
                 decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.surfaceContainer.withValues(alpha: 0.5),
+                  color: Theme.of(context)
+                      .colorScheme
+                      .surfaceContainer
+                      .withValues(alpha: 0.5),
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(
-                    color: Theme.of(context).colorScheme.outline.withValues(alpha: 0.15),
+                    color: Theme.of(context)
+                        .colorScheme
+                        .outline
+                        .withValues(alpha: 0.15),
                     width: 1,
                   ),
                 ),
@@ -1265,7 +1269,10 @@ class _HomePageState extends ConsumerState<HomePage> {
                     Icon(
                       Icons.circle,
                       size: 6,
-                      color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.6),
+                      color: Theme.of(context)
+                          .colorScheme
+                          .primary
+                          .withValues(alpha: 0.6),
                     ),
                     const SizedBox(width: 12),
                     Expanded(
